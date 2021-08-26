@@ -180,8 +180,8 @@ bool CurrencyExchanger::syncFromEuropeanCentralBank(int _timeout) {
 			std::string currencyLine = line.substr(ix + 16);
 			ix = currencyLine.find("'");
 			if (ix != std::string::npos) {
-				std::string currencyKey = currencyLine.substr(0, ix + 1);
-				std::string rate = currencyLine.substr(ix);
+				std::string currencyKey = currencyLine.substr(0, ix);
+				std::string rate = currencyLine.substr(ix + 1);
 				ix = rate.find("rate='");
 				if (ix != std::string::npos) {
 					rate = rate.substr(ix + 6);
